@@ -54,9 +54,9 @@ def text_progres(index, max):
                 make_text += '\n'
                 while (index_make < 21):
                     if porcent >= index_make * 5:
-                        make_text += '▰'
+                        make_text += '●'
                     else:
-                        make_text += '▱'
+                        make_text += '○'
                     index_make += 1
                 make_text += ''
                 return make_text
@@ -169,7 +169,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
 
     #if username not in config.ACCES_USERS:
     if username not in tl_admin_users:
-        await bot.send_message(ev.chat.id,'🛑𝓝𝓸 𝓣𝓲𝓮𝓷𝓮 𝓐𝓬𝓬𝓮𝓼𝓸, 𝓬𝓸𝓷𝓽𝓪𝓬𝓽𝓪𝓻 𝓪 @YosmelGarcia🛑')
+        await bot.send_message(ev.chat.id,'🛑𝓝𝓸 𝓣𝓲𝓮𝓷𝓮 𝓐𝓬𝓬𝓮𝓼𝓸, 𝓬𝓸𝓷𝓽𝓪𝓬𝓽𝓪𝓻 𝓪 @David_7amayo🛑')
         return
 
     if not os.path.isdir(config.ROOT_PATH + username):
@@ -177,7 +177,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
 
     try:
         if ev.message.file:
-            message = await bot.send_message(ev.chat.id,'⏳ℙ𝕣𝕠𝕔𝕖𝕤𝕒𝕟𝕕𝕠 𝔸𝕣𝕔𝕙𝕚𝕧𝕠...📄')
+            message = await bot.send_message(ev.chat.id,'🔮')
             filename = ev.message.file.id + ev.message.file.ext
             if ev.message.file.name:
                 filename = ev.message.file.name
@@ -211,13 +211,13 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
         pass
 
     if '/start' in text:
-        reply = '👋𝕳𝖔𝖑𝖆 𝕭𝖎𝖊𝖓𝖛𝖊𝖓𝖎𝖉𝖔 𝖆 𝖊𝖘𝖙𝖊 𝖇𝖔𝖙 𝖒𝖎 𝖈𝖗𝖊𝖆𝖉𝖔𝖗 𝖊𝖘 @YosmelGarcia👋\𝕰𝖓𝖛𝖎𝖆𝖒𝖊 𝖊𝖓𝖑𝖆𝖈𝖊𝖘 𝖕𝖆𝖗𝖆 𝖉𝖊𝖘𝖈𝖆𝖗𝖌𝖆𝖗 𝖞 𝖘𝖚𝖇𝖎𝖗 𝖆 𝖑𝖆 𝖓𝖚𝖇𝖊 𝖑𝖚𝖊𝖌𝖔 𝖙𝖊 𝖒𝖆𝖓𝖉𝖆𝖗𝖊 𝖊𝖑 𝖆𝖗𝖈𝖍𝖎𝖛𝖔 𝖘𝖚𝖇𝖎𝖉𝖔 𝖈𝖔𝖓 𝖙𝖝𝖙 𝖊𝖓𝖈𝖗𝖎𝖕𝖙𝖆𝖉𝖔 𝖆 𝖝𝖉𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖊𝖗(descargas/subidas)\n\n'
-        reply += '<a href="https://t.me/YosmelGarcia">Soporte</a>'
+        reply = '👋𝕳𝖔𝖑𝖆 𝕭𝖎𝖊𝖓𝖛𝖊𝖓𝖎𝖉𝖔 𝖆 𝖊𝖘𝖙𝖊 𝖇𝖔𝖙 𝖒𝖎 𝖈𝖗𝖊𝖆𝖉𝖔𝖗 𝖊𝖘 @David_7amayo👋\𝕰𝖓𝖛𝖎𝖆𝖒𝖊 𝖊𝖓𝖑𝖆𝖈𝖊𝖘 𝖕𝖆𝖗𝖆 𝖉𝖊𝖘𝖈𝖆𝖗𝖌𝖆𝖗 𝖞 𝖘𝖚𝖇𝖎𝖗 𝖆 𝖑𝖆 𝖓𝖚𝖇𝖊 𝖑𝖚𝖊𝖌𝖔 𝖙𝖊 𝖒𝖆𝖓𝖉𝖆𝖗𝖊 𝖊𝖑 𝖆𝖗𝖈𝖍𝖎𝖛𝖔 𝖘𝖚𝖇𝖎𝖉𝖔 𝖈𝖔𝖓 𝖙𝖝𝖙 𝖊𝖓𝖈𝖗𝖎𝖕𝖙𝖆𝖉𝖔 𝖆 𝖝𝖉𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖊𝖗(descargas/subidas)\n\n'
+        reply += '<a href="https://t.me/David_7amayo">Soporte</a>'
         message = await bot.send_message(ev.chat.id,reply,parse_mode='html')
         pass
     if '/add' in text and username in godlist:
         usernameadd = text.split(' ')[1]
-        tl_admin_users.append(YosmelGarcia)
+        tl_admin_users.append(David_7amayo)
         print(tl_admin_users)
     
     if '/ban' in text and username in godlist:
@@ -226,7 +226,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
         print(tl_admin_users)
     
     if 'http' in text:
-        message = await bot.send_message(ev.chat.id,'⏳ℙ𝕣𝕠𝕔𝕖𝕤𝕒𝕟𝕕𝕠 𝔼𝕟𝕝𝕒𝕔𝕖...🔗')
+        message = await bot.send_message(ev.chat.id,'⏳')
         dl = Downloader(config.ROOT_PATH + username + '/')
         file = await dl.download_url(text,progressfunc=download_progress,args=(bot,ev,message),proxies=proxies)
         if file:
@@ -244,7 +244,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
         return
 
     if '/rm' in text:
-        message = await bot.send_message(ev.chat.id,'🗑𝔼𝕞𝕡𝕖𝕫𝕒𝕟𝕕𝕠 𝕡𝕒𝕣𝕒 𝕓𝕠𝕣𝕣𝕒𝕣 𝕖𝕝 𝕒𝕣𝕔𝕙𝕚𝕧𝕠...')
+        message = await bot.send_message(ev.chat.id,'🗑...')
         text = str(text).replace('/rm ','')
         index = 0
         range = 1
@@ -287,7 +287,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
                 txtname = cmdtokens[2]
         except:
             pass
-        message = await bot.send_message(ev.chat.id,'📡ℙ𝕣𝕠𝕔𝕖𝕤𝕒𝕟𝕕𝕠 𝔼𝕟𝕝𝕒𝕔𝕖...')
+        message = await bot.send_message(ev.chat.id,'💫')
         listdir = await compress(bot,ev,text,message,username)
         try:
             await bot.edit_message(ev.chat,message,text=f'⚡️𝗣𝗿𝗲𝗽𝗮𝗿𝗮𝗻𝗱𝗼 𝗣𝗮𝗿𝗮 𝗦𝘂𝗯𝗶𝗿...')
@@ -342,7 +342,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
             await bot.send_file(ev.chat,txtsendname,
                                 caption=f'{txtsendname}',
                                 thumb='thumb.png',
-                                buttons=[Button.url('Soporte','https://t.me/YosmelGarcia')])
+                                buttons=[Button.url('Soporte','https://t.me/David_7amayo')])
             for fitem in listdir:
                 try:
                     os.unlink(fitem)
