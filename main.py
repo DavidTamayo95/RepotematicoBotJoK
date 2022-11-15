@@ -32,7 +32,7 @@ async def get_root(username):
 
 async def send_root(bot,ev,username):
     listdir = await get_root(username)
-    reply = f'📄 {username}/ ({len(listdir)} 🗂𝐿𝐼𝒮𝒯𝒜𝒟𝒪𝒮 𝒟𝐸 𝒜𝑅𝒞𝐻𝐼𝒱𝒪𝒮🗂) 📄\n\n'
+    reply = f'📄 {username}/ ({len(listdir)} 🗂™Lista de archivos™🗂) 📄\n\n'
     i=-1
     for item in listdir:
         i+=1
@@ -81,7 +81,7 @@ async def download_progress(dl, filename, currentBits, totalBits, speed, totalti
             msg += '\n' + text_progres(currentBits, totalBits) + ' ' + str(porcent(currentBits, totalBits)) + '%\n' + '\n'
             msg += '🗂 𝕿𝖔𝖙𝖆𝖑: ' + sizeof_fmt(totalBits) + '\n'
             msg += '⏬ 𝕯𝖊𝖘𝖈𝖆𝖗𝖌𝖆𝖉𝖔: ' + sizeof_fmt(currentBits) + '\n'
-            msg += '🔋 𝖁𝖊𝖑𝖔𝖈𝖎𝖉𝖆𝖉: ' + sizeof_fmt(speed) + '/s\n'
+            msg += '🔋 V𝖊𝖑𝖔𝖈𝖎𝖉𝖆𝖉: ' + sizeof_fmt(speed) + '/s\n'
             msg += '⏱ 𝕿𝖎𝖊𝖒𝖕𝖔 𝖉𝖊 𝕯𝖊𝖘𝖈𝖆𝖗𝖌𝖆: ' + str(time.strftime('%H:%M:%S', time.gmtime(totaltime))) + 's\n\n'
             await bot.edit_message(ev.chat,message,text=msg)
 
@@ -104,7 +104,7 @@ def upload_progress(filename, currentBits, totalBits, speed, totaltime, args):
             msg += '\n' + text_progres(currentBits, totalBits) + ' ' + str(porcent(currentBits, totalBits)) + '%\n' + '\n'
             msg += '☑𝕿𝖔𝖙𝖆𝖑: ' + sizeof_fmt(totalBits) + '\n'
             msg += '☑ 𝕾𝖚𝖇𝖎𝖉𝖔: ' + sizeof_fmt(currentBits) + '\n'
-            msg += '🔋 𝖁𝖊𝖑𝖔𝖈𝖎𝖉𝖆𝖉: ' + sizeof_fmt(speed) + '/s\n'
+            msg += '🔋 V𝖊𝖑𝖔𝖈𝖎𝖉𝖆𝖉: ' + sizeof_fmt(speed) + '/s\n'
             msg += '⏱𝕿𝖎𝖊𝖒𝖕𝖔 𝖉𝖊 𝕯𝖊𝖘𝖈𝖆𝖗𝖌𝖆: ' + str(time.strftime('%H:%M:%S', time.gmtime(totaltime))) + 's\n\n'
             STORE_UPLOADER[filename] = msg
 
@@ -148,7 +148,7 @@ async def compress(bot,ev,text,message,username):
             zip = zipfile.ZipFile(multifile, mode='w')
             while index<range:
                 ffullpath = config.ROOT_PATH + username + '/' + listdir[index]
-                await bot.edit_message(ev.chat,message,text=f'📚 {listdir[index]} 📚...')
+                await bot.edit_message(ev.chat,message,text=f'🗜️📚 {listdir[index]} 🗜️📚...')
                 filezise = get_file_size(ffullpath)
                 zip.write(ffullpath)
                 index+=1
@@ -169,7 +169,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
 
     #if username not in config.ACCES_USERS:
     if username not in tl_admin_users:
-        await bot.send_message(ev.chat.id,'🛑𝓝𝓸 𝓣𝓲𝓮𝓷𝓮 𝓐𝓬𝓬𝓮𝓼𝓸, 𝓬𝓸𝓷𝓽𝓪𝓬𝓽𝓪𝓻 𝓪 @David_7amayo🛑')
+        await bot.send_message(ev.chat.id,'🙈 •Que haces sino tienes permiso 👮• •😘Ve a rendirme si quieres acceso 👉 @David_7amayo™ 😉•')
         return
 
     if not os.path.isdir(config.ROOT_PATH + username):
@@ -211,7 +211,7 @@ async def onmessage(bot:TelegramClient,ev: NewMessage.Event,loop,ret=False):
         pass
 
     if '/start' in text:
-        reply = '👋𝕳𝖔𝖑𝖆 𝕭𝖎𝖊𝖓𝖛𝖊𝖓𝖎𝖉𝖔 𝖆 𝖊𝖘𝖙𝖊 𝖇𝖔𝖙 𝖒𝖎 𝖈𝖗𝖊𝖆𝖉𝖔𝖗 𝖊𝖘 @David_7amayo👋\𝕰𝖓𝖛𝖎𝖆𝖒𝖊 𝖊𝖓𝖑𝖆𝖈𝖊𝖘 𝖕𝖆𝖗𝖆 𝖉𝖊𝖘𝖈𝖆𝖗𝖌𝖆𝖗 𝖞 𝖘𝖚𝖇𝖎𝖗 𝖆 𝖑𝖆 𝖓𝖚𝖇𝖊 𝖑𝖚𝖊𝖌𝖔 𝖙𝖊 𝖒𝖆𝖓𝖉𝖆𝖗𝖊 𝖊𝖑 𝖆𝖗𝖈𝖍𝖎𝖛𝖔 𝖘𝖚𝖇𝖎𝖉𝖔 𝖈𝖔𝖓 𝖙𝖝𝖙 𝖊𝖓𝖈𝖗𝖎𝖕𝖙𝖆𝖉𝖔 𝖆 𝖝𝖉𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖊𝖗(descargas/subidas)\n\n'
+        reply = '🚦𝕳𝖔𝖑𝖆 𝕭𝖎𝖊𝖓𝖛𝖊𝖓𝖎𝖉𝖔 𝖆 𝖊𝖘𝖙𝖊 𝖇𝖔𝖙 𝖒𝖎 𝖈𝖗𝖊𝖆𝖉𝖔𝖗 𝖊𝖘 @David_7amayo👋\𝕰𝖓𝖛𝖎𝖆𝖒𝖊 𝖊𝖓𝖑𝖆𝖈𝖊𝖘 𝖕𝖆𝖗𝖆 𝖉𝖊𝖘𝖈𝖆𝖗𝖌𝖆𝖗 𝖞 𝖘𝖚𝖇𝖎𝖗 𝖆 𝖑𝖆 𝖓𝖚𝖇𝖊 𝖑𝖚𝖊𝖌𝖔 𝖙𝖊 𝖒𝖆𝖓𝖉𝖆𝖗𝖊 𝖊𝖑 𝖆𝖗𝖈𝖍𝖎𝖛𝖔 𝖘𝖚𝖇𝖎𝖉𝖔 𝖈𝖔𝖓 𝖙𝖝𝖙 𝖊𝖓𝖈𝖗𝖎𝖕𝖙𝖆𝖉𝖔 𝖆 𝖝𝖉𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖊𝖗(descargas/subidas)\n\n'
         reply += '<a href="https://t.me/David_7amayo">Soporte</a>'
         message = await bot.send_message(ev.chat.id,reply,parse_mode='html')
         pass
